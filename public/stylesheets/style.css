@@ -157,6 +157,12 @@ html {
     padding: 10rem 0;
 }
 
+@media only screen and (max-width: 600px) {
+    .destinations {
+        padding: 3rem;
+    }
+}
+
 .jumbotron h1 {
     font-size: 6rem;
 }
@@ -194,6 +200,7 @@ html {
 @media only screen and (max-width: 600px) {
     .dest-card {
         grid-column: span 12;
+        margin-bottom: 5rem;
     }
 }
 

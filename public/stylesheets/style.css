@@ -381,3 +381,7 @@ html {
 .login-container input {
     font-size: 1.6rem;
 }
+
+#delete {
+    display: inline;
+}

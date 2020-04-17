@@ -10,9 +10,9 @@
         <a href="/destinations/<%= destination._id %>/comments/new" class="btn btn-lg btn-success">Add comment</a>
         <% if(currentUser && destination.author.id.equals(currentUser._id)) { %>
             <a href="/destinations/<%= destination._id %>/edit" class="btn btn-lg btn-primary">Edit</a>
-        <form id="delete" action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
-            <button class="btn btn-lg btn-danger">Delete</button>
-        </form>
+            <form id="delete" action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
+                <button class="btn btn-lg btn-danger">Delete</button>
+            </form>
 
         <% } %>
 

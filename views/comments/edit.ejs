@@ -1,0 +1,17 @@
+<%- include("../partials/header") %>
+<div class="container add-dest">
+    <h2 class="add-comment-heading">Edit comment</h2>
+    <form class="dest-form" action="/destinations/<%= destination_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+        <div class="form-group">
+            <label for="destination">New Comment</label>
+            <input class="form-control" id="destination" type="text" name="comment[text]" value="<%= comment.text %>">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-lg btn-success" value="Add comment">
+        </div>
+    </form>
+</div>
+
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+<div class="container destinations">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to the destinations page</h1>
+        <p class="lead">Browse destinations and add your own reviews and adventures</p>
+        <hr class="my-4">
+        <p>The largest travel community in the world</p>
+        <a href="/destinations/new" class="btn btn-lg btn-success">Add Destination</a>
+      </div>
+    
+    <div class="destination-container">
+        <% data.forEach(function(place){ %>
+            <div class="card dest-card">
+                <img class="card-pic" src="<%=place.image%>">
+                <div class="card-content">
+                <h2><%= place.destination %></h2>
+                <p><%= place.description.substring(0, 50) %> ....</p>
+                <p>
+                <a href="/destinations/<%= place._id %>" class="btn btn-lg btn-warning">Read More</a>
+                </p>
+                </div>
+            </div>
+
+        <% }) %>
+    </div>
+</div>
+
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,41 @@
+<%- include("../partials/header") %>
+
+<div class="show-item">
+    <h2 class="center item-header"><%= destination.destination %></h2>
+    <div class="card item-card">
+        <img class="show-image" src="<%= destination.image %>">
+        <div class="item-content">
+        <p><%= destination.description %></p>
+        <p>Post submitted by <%= destination.author.username %></p>
+        <a href="/destinations/<%= destination._id %>/comments/new" class="btn btn-lg btn-success">Add comment</a>
+        <% if(currentUser && destination.author.id.equals(currentUser._id)) { %>
+            <a href="/destinations/<%= destination._id %>/edit" class="btn btn-lg btn-primary">Edit</a>
+        <form id="delete" action="/destinations/<%= destination._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-lg btn-danger">Delete</button>
+        </form>
+
+        <% } %>
+
+        </div>
+        <% destination.comments.forEach(function(comment) { %>
+            <hr>
+            <div class="comment-container">
+            <p><strong>Posted by </strong><%= comment.author.username %> <%= comment.text %></p>
+
+            <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                <div class="buttons">
+                <a class="com-edit btn btn-warning" href="/destinations/<%= destination._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                <form class="com-delete" action="/destinations/<%= destination._id %>/comments/<%= comment._id %>?_method=DELETE"" method="POST">
+                    <button class="com-delete btn btn-danger">Delete</button>
+                </form>
+                </div>
+                <hr>
+
+            <% } %>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,26 @@
+<%- include("../partials/header") %>
+<div class="container add-dest">
+    <form class="dest-form" action="/destinations" method="POST">
+        <div class="form-group">
+            <label for="destination">Destination Name</label>
+            <input class="form-control" id="destination" type="text" name="destination" placeholder="Destination Name">
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image URL</label>
+            <input class="form-control" id="image" type="text" name="image" placeholder="Image URL">
+        </div>
+        
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea id="description" class="form-control" name="description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-lg btn-success" value="Add destination">
+        </div>
+    </form>
+</div>
+
+
+<%- include("../partials/footer") %>
